@@ -17,8 +17,8 @@ app.use('/api',apiRoutes);
 if(process.env.NODE_ENV == 'production') {
     const path = require('path');
     app.get('/*',(req,res) => {
-        // res.sendfile(__dirname,path.resolve('../client/build','index.html'));
-        return res.status(200).json({success:true});
+        return res.sendfile(path.resolve(__dirname,'../client/build','index.html'));
+        // return res.status(200).json({success:true});
     })
 }
 

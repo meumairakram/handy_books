@@ -3,7 +3,7 @@ const express = require('express');
 
 const apiRoutes = express.Router();
 const jwt = require('jsonwebtoken');
-const config = require('../config/config').get(process.env);
+const config = require('../config/config').get(process.env.NODE_ENV);
 
 const mongoose = require('../models/database');
 const { User } = require('../models/user');
